@@ -25,13 +25,13 @@ local THEME = {
 
 -- Imports (using loadstring for exploits)
 local components = {};
-components.codeeditor = loadstring(game:HttpGet("https://raw.githubusercontent.com/testing2122/RobloxNeonIDE/main/src/components/codeeditor.lua"))();
-components.aichat = loadstring(game:HttpGet("https://raw.githubusercontent.com/testing2122/RobloxNeonIDE/main/src/components/aichat.lua"))();
-components.tabsystem = loadstring(game:HttpGet("https://raw.githubusercontent.com/testing2122/RobloxNeonIDE/main/src/components/tabsystem.lua"))();
+components.codeeditor = loadstring(game:HttpGet("https://raw.githubusercontent.com/testing2122/RobloxNeonIDE/refs/heads/main/src/components/codeeditor.lua"))();
+components.aichat = loadstring(game:HttpGet("https://raw.githubusercontent.com/testing2122/RobloxNeonIDE/refs/heads/main/src/components/aichat.lua"))();
+components.tabsystem = loadstring(game:HttpGet("https://raw.githubusercontent.com/testing2122/RobloxNeonIDE/refs/heads/main/src/components/tabsystem.lua"))();
 
 local utils = {};
-utils.animate = loadstring(game:HttpGet("https://raw.githubusercontent.com/testing2122/RobloxNeonIDE/main/src/utils/animate.lua"))();
-utils.ui = loadstring(game:HttpGet("https://raw.githubusercontent.com/testing2122/RobloxNeonIDE/main/src/utils/ui.lua"))();
+utils.animate = loadstring(game:HttpGet("https://raw.githubusercontent.com/testing2122/RobloxNeonIDE/refs/heads/main/src/utils/animate.lua"))();
+utils.ui = loadstring(game:HttpGet("https://raw.githubusercontent.com/testing2122/RobloxNeonIDE/refs/heads/main/src/utils/ui.lua"))();
 
 -- Constructor
 function NeonIDE.new()
@@ -201,13 +201,13 @@ function NeonIDE.new()
             self.dragStart = input.Position;
             self.startPos = self.container.Position;
         end
-    end);
+    });
     
     self.header.InputEnded:Connect(function(input)
         if input.UserInputType == Enum.UserInputType.MouseButton1 then
             self.dragging = false;
         end
-    end);
+    });
     
     uis.InputChanged:Connect(function(input)
         if input.UserInputType == Enum.UserInputType.MouseMovement and self.dragging then
@@ -219,7 +219,7 @@ function NeonIDE.new()
                 self.startPos.Y.Offset + delta.Y
             );
         end
-    end);
+    });
     
     return self;
 end
