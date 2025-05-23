@@ -9,7 +9,7 @@ return function(config)
     config = config or {};
     
     -- Load the main library
-    local NeonIDE = loadstring(game:HttpGet("https://raw.githubusercontent.com/testing2122/RobloxNeonIDE/main/src/init.lua"))();
+    local NeonIDE = loadstring(game:HttpGet("https://raw.githubusercontent.com/testing2122/RobloxNeonIDE/refs/heads/main/src/init.lua"))();
     
     -- Create a new IDE instance
     local ide = NeonIDE.new();
@@ -71,7 +71,8 @@ end
 --[[
     Usage example:
 
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/testing2122/RobloxNeonIDE/main/loader.lua"))()({
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/testing2122/RobloxNeonIDE/refs/heads/main/loader.lua"))()(
+    {
         code = "print('Hello World!')",
         onSave = function(code)
             writefile("saved_code.lua", code)
